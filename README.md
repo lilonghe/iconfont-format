@@ -1,10 +1,9 @@
-## Iconfont format
-一键下载 Iconfont 项目所有图标，自动生成 icon 组件所需要的图标信息
+# Icon format
 
-## Config
 ```
 const config = {
-    url: 'https://at.alicdn.com/t/c/font_4622387_tu0pg1aur2b.js',
+    url: 'https://at.alicdn.com/t/c/font_4622387_tu0pg1aur2b.js', // iconfont
+    svgPath: './svg/', // local
     savePath: './demo/icons.tsx',
     // 是否是多色图标 is colorful icon
     isColorFul: false,
@@ -13,18 +12,13 @@ const config = {
 }
 ```
 
+## Iconfont
+`index.mjs`
 
-## Usage
-将 index.mjs 拷贝到项目中，修改 index.mjs 中的 config 信息，执行 node index.mjs
+一键下载 Iconfont 项目所有图标，自动生成 icon 组件所需要的图标信息。
 
-```
-node index.mjs
-```
 
-```
-// package.json
-"scripts": {
-    "icon": "node index.mjs"
-}
-npm run icon
-```
+## Local svg
+`local.mjs`
+
+一键格式化本地 icon svg 文件，只保留必须信息（path.d）。
