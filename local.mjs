@@ -1,5 +1,8 @@
 import { readdir, readFile, writeFile } from 'node:fs/promises';
-import { join, basename } from 'node:path';
+import { join, basename, dirname } from 'node:path';
+import { fileURLToPath } from 'node:url';
+
+const __dirname = dirname(fileURLToPath(import.meta.url));
 
 const config = {
     // SVG 文件所在目录
@@ -35,14 +38,14 @@ function extractViewBox(content) {
 async function processSVGFiles() {
     try {
         // 读取目录下所有文件
-        const files = await readdir(config.svgDir);
+        const files = await readdir(join(__dirname, config.svgDir));
         const svgFiles = files.filter(file => file.toLowerCase().endsWith('.svg'));
 
         const symbols = {};
 
         // 处理每个 SVG 文件
         for (const file of svgFiles) {
-            const content = await readFile(join(config.svgDir, file), 'utf-8');
+            const content = await readFile(join(__dirname, config.svgDir, file), 'utf-8');
             const id = basename(file, '.svg');
 
             // 提取 SVG 内容
