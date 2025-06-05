@@ -10,12 +10,5 @@ export default function Icon({
     size?: number | string;
     color?: string;
 }) {
-    // 直接使用 svg
-    // return cloneElement(icons[type], {
-    //     width: size,
-    //     height: size,
-    //     fill: color,
-    // })
-
     return <svg width={size} height={size} fill={color} viewBox="0 0 100 100">{icons[type]}</svg>;
 }

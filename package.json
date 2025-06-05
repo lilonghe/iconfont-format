@@ -1,0 +1,19 @@
+{
+  "name": "svg-icon-format",
+  "version": "0.0.1",
+  "description": "A tool for formatting SVG icons from iconfont or local files",
+  "main": "bin/index.js",
+  "bin": {
+    "svg-icon-format": "bin/index.js"
+  },
+  "type": "module",
+  "scripts": {},
+  "keywords": [
+    "iconfont",
+    "svg",
+    "icon",
+    "format"
+  ],
+  "author": "lilonghe@outlook.com",
+  "license": "MIT"
+}
